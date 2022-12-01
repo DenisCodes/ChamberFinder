@@ -32,7 +32,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./build
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -47,4 +47,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: bitovi/github-actions-react-to-ghp@v1.2.0
+        with:
+          path: build
